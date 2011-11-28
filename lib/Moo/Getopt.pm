@@ -70,7 +70,7 @@ sub new_with_options {
     #extract required
     my @required;
     foreach my $r(@getopt[1..$#getopt]) {
-        my ($pf,$d,$o) = @$r;
+        my ($pf,undef,$o) = @$r;
 		my ($p) = split(/=/,$pf);
 
         defined $o
