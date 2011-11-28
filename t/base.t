@@ -2,8 +2,7 @@
 use strict;
 use warnings;
 use Test::More;
-use Carp;
-use Data::Dumper;
+use Modern::Perl;
 
 {
 	package t;

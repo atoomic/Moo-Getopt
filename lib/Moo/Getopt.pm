@@ -45,8 +45,6 @@ use strict;
 use warnings;
 use Moo::Role;
 use Getopt::Long::Descriptive;
-use Carp;
-use Data::Dumper;
 use Modern::Perl;
 
 # VERSION
@@ -68,12 +66,14 @@ sub new_with_options {
 
 	#run getopt
 	my @getopt = $class->getopt;
-	my ($opt, $usage) = describe_options(@getopt);
+	my ($opt, $usage) = describe_options(@getopt,['help',"print usage message and exit"]);
+
+	print($usage->text), exit if $opt->help;
 
 	#replace params if not exist by command line one
 	foreach my $r (@getopt[1..$#getopt]) {
 		my ($pf) = @$r;
-		my ($p,$f) = split(/=/,$pf);
+		my ($p) = split(/=/,$pf);
 		$params{$p} //= $opt->$p;
 	}
 	
