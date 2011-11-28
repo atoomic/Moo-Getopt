@@ -57,4 +57,8 @@ is_deeply($test->array, [1,2,3], 'array contain 1,2,3');
 isa_ok($test->z, 'ARRAY','z');
 is_deeply($test->z, [qw/k g b/], 'z contain k,g,b');
 
+@ARGV=();
+my $test2 = t->new_with_options(bool => 1);
+is($test->bool, 1, 'Bool ok by passing it in param');
+
 done_testing;
