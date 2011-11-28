@@ -1,0 +1,7 @@
+0.1 - 2011-11-28 00:55
+===
+
+    * First release
+    Use Getopt::Long::Descriptive
+    Add role that require getopt
+    Add new key new_with_options
