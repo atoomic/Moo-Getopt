@@ -7,6 +7,8 @@ use Modern::Perl;
 {
 	package t;
 	use Moo;
+    use strict;
+    use warnings;
 	
 	has 'bool' => (
 		is => 'rw',
@@ -20,7 +22,7 @@ use Modern::Perl;
 		is => 'rw',
 		coerce => sub {
 			my ($p) = @_;
-			unless(ref $p eq 'ARRAY') {
+			if(defined $p && ref $p ne 'ARRAY') {
 				my @a = split(/,/,$p);
 				$p = \@a;
 			}
