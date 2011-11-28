@@ -1,3 +1,10 @@
+0.2 - 2011-11-28 10:15
+===
+
+    * remove required from getopt
+    check required after adding it to params
+
+
 0.1 - 2011-11-28 00:55
 ===
 
